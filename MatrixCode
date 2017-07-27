@@ -1,0 +1,10 @@
+import pandas as pd
+xls_file = pd.ExcelFile('../Desktop/towers.xlsx')
+xls_file
+xls_file.sheet_names
+df = xls_file.parse('NRT_DATA.WIND_TOWER')
+df
+from scipy.spatial.distance import pdist, squareform
+dist = pdist(df[['X_COORD', 'Y_COORD']], 'euclidean')
+df_dist = pd.DataFrame(squareform(dist))
+df_dist
