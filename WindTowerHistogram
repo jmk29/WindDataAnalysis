@@ -1,0 +1,6 @@
+import pandas as pd
+xls_file = pd.ExcelFile('../Desktop/export.xlsx')
+xls_file
+xls_file.sheet_names
+df = xls_file.parse('DATA')
+df
