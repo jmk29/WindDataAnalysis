@@ -1,0 +1,9 @@
+import pandas as pd
+xls_file = pd.ExcelFile('../Desktop/towers.xlsx')
+xls_file
+xls_file.sheet_names
+df = xls_file.parse('NRT_DATA.WIND_TOWER')
+df
+df2 = pd.concat([df, df.T]).fillna(0)
+df2 = df2.reindex(df2.columns)
+df2
